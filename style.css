@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+* {
+    margin: 0;
+    outline: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    background-color: #ffffffab;
+    height: 60%;
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    border-radius: 10px;
+    box-shadow: #00000040 0 20px 25px;
+}
+
+
+section {
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #eee;
+}
+
+.generator {
+    grid-column: 1/4;
+    grid-row: 1/5;
+    display: flex;
+    flex-direction: column;
+}
+
+.generator > div:first-child {
+    flex: 3;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+p {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+}
+
+.generator > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="color"] {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 50%;
+}
+
+input[type="text"] {
+    background-color: transparent;
+    font-size: 20px;
+    width: 50%;
+    text-align: center;
+}
+
+input[type="range"] {
+    border: 1px solid #000;
+    transform: scale(2);
+    width: 40%;
+}
+
+.generator > div:last-child {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.generator > div:last-child > div:first-child {
+    width: 500px;
+    height: 100px;
+}
+
+#generate {
+    background-color: #474747;
+    color: #e6e6e6;
+    width: 30%;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#generate:hover {
+    background-color: #353535;
+}
+
+#generate:active {
+    color: #e6e6e6D0;
+}
+
+.code {
+    grid-row: 4/5;
+    grid-column: 4/6;
+    display: flex;
+    justify-content: space-between;
+    background-color: #474747;
+}
+
+textarea {
+    height: 100%;
+    width: 85%;
+    color: #e6e6e6;
+    background-color: transparent;
+    font-size: 15px;
+    padding: 10px;
+    resize: none;
+}
+
+.copy {
+    width: 10%;
+    height: 4vh;
+    margin: 5px;
+    font-size: 20px;
+    color: #e6e6e6;
+    background-color: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.copy:hover {
+    background-color: #e6e6e620;
+}
+
+.copy:active {
+    color: #e6e6e6D0;
+}
+
+.schematic {
+    grid-column: 4/6;
+    grid-row: 1/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.circle {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    margin: 20px auto;
+    border: 1px solid #000;
+}
+
+.dot {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}

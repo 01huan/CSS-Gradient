@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Gradient Generator</title>
+</head>
+<body>
+    <main>
+        <section class="generator">
+            <div>
+                <div>
+                    <input type="color" id="start">
+                    <input type="text" class="hex" id="hex1" readonly value="$000000">
+                </div>
+                <p>to</p>
+                <div>
+                    <input type="color" id="end">
+                    <input type="text" class="hex" id="hex2" readonly value="#000000">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <input type="range" id="angle" min="0" max="359" value="0">
+                    <span>angle: 0 degree</span>
+                </div>
+                <button id="generate" onclick="generate()">Generate</button>
+            </div>
+        </section>
+        <section class="schematic">
+            <h3>Schematic Diagram</h3>
+            <div class="circle">
+                <div class="dot" id="c1"></div>
+                <div class="dot" id="c2"></div>
+                <svg class="arrow" width="200" height="200">
+                    <line id="vector" x1="0" y1="0" x2="0" y2="0" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+                            <polygon points="0 1, 10 4, 0 7" />
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+        </section>
+        <section class="code">
+            <textarea readonly></textarea>
+            <button class="copy" title="copy" onclick="copy()"><i class='bx bx-copy' ></i></button>
+        </section>
+    </main>
+<script src="script.js"></script>
+</body>
+</html>
